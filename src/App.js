@@ -1,36 +1,18 @@
-// import Counter from "./Counter";
-// import Info from "./Info";
-//import { useState } from "react";
-//import Info from "./Info";
+import React , {Component} from 'react';
+//import ValidationSample from './ValidationSample';
+import ScrollBox from './ScrollBox';
 
-import Average from "./Average";
-
-
-const  App = () => {
-  return <Average/>;
+//컴포넌트 내부에서 DOM에 직접 접근해야 할 때는 ref를 사용
+class App extends Component {
+    render() {
+     return(
+        <div>
+        <ScrollBox ref={(ref)=>this.ScrollBox=ref}/>
+        <button onClick={()=> this.ScrollBox.scrollToBottom()}>
+            맨밑으로
+        </button>
+        </div>
+    )};
 };
 
-// const  App = () => {
-//   return <Info/>;
-// };
-
-
-// const  App = () => {
-//   return <Counter/>;
-// };
-
-// const App = () => {
-//   const [visible, setVisible] = useState(false);
-
-//   return (
-//     <div>
-//       <button onClick={()=> {
-//         setVisible(!visible);
-//       }}>{visible ? '숨기기':'보이기'}
-//       </button>
-//       <hr/>
-//       {visible && <Info/>}
-//     </div>
-//   )
-// } 
 export default App;
